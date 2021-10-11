@@ -1,0 +1,22 @@
+{
+  "name": "mgm-shopgun",
+  "author": {
+    "name": "Mateusz Gruźla",
+    "url": "https://github.com/skowyrnyMG"
+  },
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn workspace @shopgun/store run dev",
+    "serve": "lerna run start",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "test:watch": "lerna run test --watch"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
