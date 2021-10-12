@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
-const Button: FC = ({ children }) => <button>{children}</button>;
+import './Button.scss';
 
-export default Button;
+export const Button: FC = ({ children }) => (
+  <button className='button'>{children}</button>
+);
