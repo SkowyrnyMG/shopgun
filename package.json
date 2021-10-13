@@ -21,6 +21,7 @@
     "clean:cache": "lerna exec rimraf .next/cache"
   },
   "devDependencies": {
+    "eslint": "7.32.0",
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
     "husky": "^7.0.2",
