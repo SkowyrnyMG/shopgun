@@ -4,6 +4,7 @@ module.exports = {
     browser: true,
   },
   extends: ['airbnb', 'prettier'],
+  plugins: ['simple-import-sort'],
   rules: {
     'class-methods-use-this': 0,
     'no-nested-ternary': 2,
@@ -77,5 +78,25 @@ module.exports = {
       { allowShortCircuit: true, allowTernary: true },
     ],
     '@typescript-eslint/no-unused-vars': 2,
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // globals and packages starting with @
+          // eslint-disable-next-line global-require
+          [`^(${require('module').builtinModules.join('|')})(/|$)`],
+          ['^react', '^next'],
+          ['^@?\\w'],
+          // hooks and utils function
+          ['^utils(/.*|$)'],
+          ['^hooks(/.*|$)'],
+          // Then parent and siblings
+          ['^\\.'],
+          // Style imports.
+          ['^.+\\.s?css$'],
+        ],
+      },
+    ],
+    'simple-import-sort/exports': 'error',
   },
 };

@@ -1,6 +1,10 @@
 module.exports = {
-  extends: ['../../.eslintrc.base.js', 'next/core-web-vitals', 'plugin:import/typescript'],
-  plugins: ['@typescript-eslint', 'prettier'],
+  extends: [
+    '../../.eslintrc.base.js',
+    'plugin:@next/next/core-web-vitals',
+    'plugin:import/typescript',
+  ],
+  plugins: ['@typescript-eslint'],
   settings: {
     'import/resolver': {
       node: {
