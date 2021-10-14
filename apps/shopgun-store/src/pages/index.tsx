@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Button } from '@shopgun/ui-kit';
 import Link from 'components/Link';
 
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => (
   <div className={styles.container}>
