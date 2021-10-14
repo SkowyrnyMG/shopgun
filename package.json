@@ -21,7 +21,11 @@
     "tslint": "lerna run tslint --parallel",
     "lint:fix": "eslint . --fix . --ext .js,.ts,.jsx,.tsx",
     "stylelint:fix": "yarn stylelint **/*.scss --fix",
-    "stylelint-check": "stylelint-config-prettier-check"
+    "stylelint-check": "stylelint-config-prettier-check",
+    "storybook-ui": "yarn workspace @shopgun/ui-kit run storybook",
+    "storybook-ui-build": "yarn workspace @shopgun/ui-kit run build-storybook",
+    "storybook-store": "yarn workspace @shopgun/store run storybook",
+    "storybook-store-build": "yarn workspace @shopgun/store run build-storybook"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",

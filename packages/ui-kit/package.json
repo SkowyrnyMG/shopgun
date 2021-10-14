@@ -7,7 +7,9 @@
   "source": "src/index.tsx",
   "main": "src/index.tsx",
   "scripts": {
-    "tslint": "tsc --noEmit"
+    "tslint": "tsc --noEmit",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@types/react": "^17.0.4",
@@ -34,6 +36,12 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "babel-loader": "^8.2.2",
     "eslint-plugin-simple-import-sort": "^7.0.0"
   }
 }

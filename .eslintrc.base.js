@@ -98,5 +98,6 @@ module.exports = {
       },
     ],
     'simple-import-sort/exports': 'error',
+    'unicorn/filename-case': 0,
   },
 };
