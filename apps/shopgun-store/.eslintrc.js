@@ -5,6 +5,9 @@ module.exports = {
     'plugin:import/typescript',
   ],
   plugins: ['@typescript-eslint'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
   settings: {
     'import/resolver': {
       node: {

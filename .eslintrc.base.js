@@ -3,8 +3,8 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: ['airbnb', 'prettier'],
-  plugins: ['simple-import-sort'],
+  extends: ['airbnb', 'plugin:sonarjs/recommended', 'plugin:unicorn/recommended', 'prettier'],
+  plugins: ['simple-import-sort', 'sonarjs'],
   rules: {
     'class-methods-use-this': 0,
     'no-nested-ternary': 2,

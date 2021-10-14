@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 
 import cn from 'classnames';
 
-import button from './Button.module.scss';
+import button from './button.module.scss';
 
-interface ButtonProps {
+interface ButtonProperties {
   variant?: string;
 }
 
-export const Button: FC<ButtonProps> = ({ children, variant = 'blue' }) => {
+export const Button: FC<ButtonProperties> = ({ children, variant = 'blue' }) => {
   const buttonClasses = cn(button.wrapper, {
     [button[variant]]: variant,
   });

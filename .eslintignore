@@ -4,3 +4,4 @@ node_modules/*
 public
 .eslintrc.js
 .eslintrc.base.js
+**/tsconfig.json
