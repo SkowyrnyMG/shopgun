@@ -1,6 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   env: {
+    jest: true,
     browser: true,
   },
   extends: ['airbnb', 'plugin:sonarjs/recommended', 'plugin:unicorn/recommended', 'prettier'],

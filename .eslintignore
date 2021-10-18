@@ -1,7 +1,23 @@
-.tsconfig.json
+# exclude node modules and other instalations directories
 node_modules/*
+
+# exclude next cache and build directories
 .next/*
 public
+
+# exclue eslint config files
 .eslintrc.js
 .eslintrc.base.js
+
+# exclude ts config files
+.tsconfig.json
 **/tsconfig.json
+
+# exclude test config files
+jest.config.base.js
+jest.conifg.js
+**/jest.config.js
+
+# exclude git
+.git
+.gitignore
