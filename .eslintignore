@@ -9,9 +9,10 @@ public
 .eslintrc.js
 .eslintrc.base.js
 
-# exclude ts config files
+# exclude config files
 .tsconfig.json
 **/tsconfig.json
+next.config.js
 
 # exclude test config files
 jest.config.base.js

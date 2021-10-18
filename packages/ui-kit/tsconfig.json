@@ -6,6 +6,6 @@
     "rootDir": "src",
     "baseUrl": "src"
   },
-  "include": ["src", "**/*.ts", "**/*.tsx"],
-  "exclude": ["./.eslintrc.cjs"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src"],
+  "exclude": ["./jest.config.js"]
 }

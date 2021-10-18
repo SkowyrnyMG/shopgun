@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
-import NextLink from 'next/link';
+import React, { FC } from "react";
+import NextLink from "next/link";
 
-import link from './Link.module.scss';
+import link from "./Link.module.scss";
 
 interface LinkProperties {
   url: string;

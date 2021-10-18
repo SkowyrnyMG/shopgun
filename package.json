@@ -13,7 +13,7 @@
     "start:store": "yarn workspace @shopgun/store run dev",
     "serve": "lerna run start",
     "build": "lerna run build",
-    "test": "lerna exec run jest",
+    "test": "lerna exec jest",
     "test:watch": "lerna exec run jest --watch",
     "test:store": "yarn workspace @shopgun/store run jest",
     "test:store-watch": "yarn workspace @shopgun/store run jest --watch",
