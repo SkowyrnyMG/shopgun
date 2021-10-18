@@ -9,7 +9,8 @@
   "scripts": {
     "tslint": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test:coverage": "jest --coverage=true --coverageDirectory=coverage"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

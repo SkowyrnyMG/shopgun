@@ -13,6 +13,7 @@ module.exports = {
       node: {
         moduleDirectory: ['node_modules', 'src/'],
       },
+      alias: [['testUtils', './src/testUtils']],
     },
   },
   rules: {

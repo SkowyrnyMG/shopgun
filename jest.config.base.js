@@ -1,15 +1,12 @@
 module.exports = {
+  moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {
-    '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+    ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy",
   },
-  testMatch: [
-    '**/__tests__/*.tsx',
-    '**/*.test.tsx',
-    '**/__tests__/*.ts',
-    '**/*.test.ts',
-    '**/__tests__/*.js',
-    '**/*.test.js',
+  testMatch: ["**/?(*.)+(spec|test).[jt]s?(x)"],
+  collectCoverageFrom: [
+    "<rootDir>/src/components/*.[jt]s?(x)",
+    "<rootDir>/src/components/**/*.[jt]s?(x)",
   ],
-  collectCoverageFrom: ['*.js', '*.jsx', '*.ts', '*.tsx'],
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
 };
