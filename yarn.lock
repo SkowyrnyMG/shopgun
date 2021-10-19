@@ -11239,6 +11239,11 @@ next-images@^1.8.1:
     file-loader "^6.2.0"
     url-loader "^4.1.0"
 
+next-router-mock@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/next-router-mock/-/next-router-mock-0.5.3.tgz#3b8410ddc944bffd4ede9607cfa41d8403186647"
+  integrity sha512-epyCcx7hCk1y6lKHn3uRjtXF1Rr5+jBO/QFh3NbwLlrCG8lWY2SLh+EV0rvPkusZv2phwQz0BPbr8N/ib6IAeQ==
+
 next-transpile-modules@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-8.0.0.tgz#56375cdc25ae5d23a834195f277fc2737b26cb97"

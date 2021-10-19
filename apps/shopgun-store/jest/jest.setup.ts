@@ -1,9 +1,11 @@
-import * as nextRouter from "next/router";
+import mockRouter from "next-router-mock";
 
 import "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
+// eslint-disable-next-line global-require
+jest.mock("next/dist/client/router", () => require("next-router-mock"));
+
 beforeAll(() => {
-  const useRouter = jest.spyOn(nextRouter, "useRouter");
-  useRouter.mockImplementation(() => ({ route: "/" } as nextRouter.Router));
+  mockRouter.setCurrentUrl("/about");
 });

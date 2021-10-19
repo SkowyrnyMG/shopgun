@@ -109,5 +109,6 @@ module.exports = {
     "simple-import-sort/exports": "error",
     "unicorn/filename-case": 0,
     "unicorn/prevent-abbreviations": 0,
+    "unicorn/prefer-module": 0,
   },
 };
