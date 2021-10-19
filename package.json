@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "start:store": "yarn workspace @shopgun/store run dev",
+    "start:dashboard": "yarn workspace @shopgun/dashboard run dev",
     "serve": "lerna run start",
     "build": "lerna run build",
     "test": "lerna exec jest",

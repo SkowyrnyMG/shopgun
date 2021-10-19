@@ -20,7 +20,7 @@ const Home: NextPage = () => (
     <Link url="/about">lol</Link>
 
     <main className={styles.main}>
-      <h1>STORE</h1>
+      <h1>DASHBOARD</h1>
       <div className={styles.grid}>
         <a href="https://nextjs.org/docs" className={styles.card}>
           <h2>Documentation &rarr;</h2>
