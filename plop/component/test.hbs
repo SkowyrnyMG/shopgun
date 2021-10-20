@@ -1,0 +1,23 @@
+import React from 'react';
+
+import {{properCase name}} from '{{lowerCase directory}}{{#isContentType directory}}/{{camelCase componentType}}/{{else}}/{{/isContentType}}{{properCase name}}'
+import { {{properCase name}}Props } from '{{lowerCase directory}}{{#isContentType directory}}/{{camelCase componentType}}/{{else}}/{{/isContentType}}{{properCase name}}/models.d'
+import { render, screen } from 'testUtils';
+
+const props: {{properCase name}}Props = {
+
+};
+
+describe('{{properCase name}} - should pass all test cases', () => {
+  test('the {{properCase name}} component renders correctly with required and optional props', () => {
+  render(<{{properCase name}} {...props} />);
+
+  const {{camelCase name}}Node = screen.getByText(/change this text or the whole query$/i);
+
+  // the component has been rendered
+  expect({{camelCase name}}Node).toBeInTheDocument();
+
+  // generating a snapshot
+  expect({{camelCase name}}Node).toMatchSnapshot();
+  });
+})

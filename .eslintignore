@@ -8,6 +8,7 @@ public
 # exclue eslint config files
 .eslintrc.js
 .eslintrc.base.js
+plopfile.js
 
 # exclude config files
 .tsconfig.json
