@@ -20,6 +20,8 @@
     "test:store-watch": "yarn workspace @shopgun/store run jest --watch",
     "test:uikit": "yarn workspace @shopgun/ui-kit run jest",
     "test:uikit-watch": "yarn workspace @shopgun/ui-kit run jest --watch",
+    "test:dashboard": "yarn workspace @shopgun/dashboard run jest",
+    "test:dashboard-watch": "yarn workspace @shopgun/dashboard run jest --watch",
     "test:coverage": "lerna run test:coverage",
     "prepare": "husky install",
     "clean:all": "lerna exec rimraf node_modules && rimraf node_modules",

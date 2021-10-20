@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 
 import { Button } from "@shopgun/ui-kit";
-import Link from "components/Link";
 
 import styles from "../styles/Home.module.scss";
 
@@ -17,7 +16,6 @@ const Home: NextPage = () => (
     <Button>lol</Button>
     <Button variant="green">lol</Button>
     <Button variant="red">lol</Button>
-    <Link url="/about">lol</Link>
 
     <main className={styles.main}>
       <h1>STORE</h1>

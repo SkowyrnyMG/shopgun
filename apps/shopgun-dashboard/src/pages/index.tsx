@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import { Button } from "@shopgun/ui-kit";
-import Link from "components/Link";
+import Link from "components/atoms/Link";
 
 import styles from "../styles/Home.module.scss";
 
