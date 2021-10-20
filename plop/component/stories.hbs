@@ -1,1 +1,12 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import {{properCase name}} from '{{lowerCase directory}}{{#isContentType directory}}/{{camelCase componentType}}/{{else}}/{{/isContentType}}{{properCase name}}'
+
+export default {
+  title: "{{properCase name}}",
+  component: {{properCase name}},
+  argTypes: {},
+} as ComponentMeta<typeof {{properCase name}}>;
+
+const Template: ComponentStory<typeof {{properCase name}}> = args => <{{properCase name}} {...args} />;
+
+export const {{properCase name}}Variant = Template.bind({});
