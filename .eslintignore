@@ -9,8 +9,8 @@ public
 .eslintrc.js
 .eslintrc.base.js
 plopfile.js
-storybook.base.js
 
+storybook.base.js
 # exclude config files
 .tsconfig.json
 **/tsconfig.json
