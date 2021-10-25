@@ -1,9 +1,22 @@
 import React, { FC } from 'react';
+{{#insertOption componentImports "classNames"}}
+
+import cn from 'classNames';
+{{/insertOption}}
 
 import { {{properCase name}}Props } from './models.d';
 
 import {{camelCase name}} from './{{properCase name}}.module.scss';
 
-const {{properCase name}}: FC<{{properCase name}}Props> = ({  }) => <></>;
+const {{properCase name}}: FC<{{properCase name}}Props> = ({  }) => {
+  {{#insertOption componentImports "classNames"}}
+  const {{camelCase name}}Classes = cn({{camelCase name}}.wrapper);
+  {{/insertOption}}
+
+  return (
+    <div {{#insertOption componentImports "classNames"}}className={ {{camelCase name}}Classes }{{/insertOption}} data-testid="test-{{dashCase name}}" />
+  )
+};
+
 
 export default {{properCase name}};

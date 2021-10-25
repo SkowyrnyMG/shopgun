@@ -1,42 +1,111 @@
 const toCamelCase = require("lodash/camelCase");
+const CONSTANTS = {
+  TYPE: {
+    LIST: "list",
+    INPUT: "input",
+    CHECKBOX: "checkbox",
+  },
+  FILES: {
+    STORIES: "stories",
+    TESTS: "tests",
+  },
+  TYPE_OPTIONS: {
+    INTERFACE: "interface",
+    NAMESPACE: "namespace",
+  },
+  TEST_FEATURES: {
+    ON_CLICK: "onClick",
+  },
+};
 
 module.exports = (plop) => {
   plop.setGenerator("component", {
     description: "adds React component",
     prompts: [
       {
-        type: "list",
+        type: CONSTANTS.TYPE.LIST,
         name: "workspace",
         message: "Please choose a workspace",
         choices: ["shopgun-dashboard", "shopgun-store", "ui-kit"],
       },
       {
-        type: "list",
+        type: CONSTANTS.TYPE.LIST,
         name: "directory",
         message: "Please specify a directory",
         choices: ["components", "templates", "pages", "create a new one"],
       },
       {
-        type: "list",
+        type: CONSTANTS.TYPE.LIST,
         name: "componentType",
         message: "Please choose component type",
         choices: ["atoms", "molecules", "organisms"],
         when: (answers) => answers.directory === "components",
       },
       {
-        type: "input",
+        type: CONSTANTS.TYPE.INPUT,
         name: "newDirectory",
         message: "Please enter a directory name",
         when: (answers) => answers.directory === "create a new one",
       },
       {
-        type: "list",
-        name: "isStories",
-        message: "Would you like to add stories?",
-        choices: ["yes", "no"],
+        type: CONSTANTS.TYPE.CHECKBOX,
+        name: "optionalFiles",
+        message: "Which optional files would you like to add?",
+        choices: [
+          {
+            name: "add Stories with base config",
+            value: CONSTANTS.FILES.STORIES,
+            checked: true,
+          },
+          {
+            name: "add Tests with base config",
+            value: CONSTANTS.FILES.TESTS,
+            checked: true,
+          },
+        ],
       },
       {
-        type: "input",
+        type: CONSTANTS.TYPE.CHECKBOX,
+        name: "testFeatures",
+        message: "Choose addtional test features you would like to add:",
+        choices: [
+          {
+            name: "add on click function and base config",
+            value: CONSTANTS.TEST_FEATURES.ON_CLICK,
+          },
+        ],
+      },
+      {
+        type: CONSTANTS.TYPE.CHECKBOX,
+        name: "typeOptions",
+        message: "Choose additional component type options:",
+        choices: [
+          { value: CONSTANTS.TYPE_OPTIONS.INTERFACE, checked: true },
+          CONSTANTS.TYPE_OPTIONS.NAMESPACE,
+        ],
+      },
+      {
+        type: CONSTANTS.TYPE.LIST,
+        name: "namespaceOption",
+        message: "Choose if you would like to export or declare namespace",
+        choices: ["declare", "export"],
+        when: (answers) =>
+          answers.typeOptions.includes(CONSTANTS.TYPE_OPTIONS.NAMESPACE),
+      },
+      {
+        type: CONSTANTS.TYPE.CHECKBOX,
+        name: "componentImports",
+        message:
+          "Choose which additional dependencies would you like to import to component .tsx file:",
+        choices: [
+          {
+            name: "classNames library to manage multiple classes",
+            value: "classNames",
+          },
+        ],
+      },
+      {
+        type: CONSTANTS.TYPE.INPUT,
         name: "name",
         message: "Please enter component name",
       },
@@ -52,6 +121,8 @@ module.exports = (plop) => {
         data.directory === "components" ? "{{dashCase componentType}}/" : "";
       const basePath = `${workspaceType}/{{dashCase workspace}}/src`;
       const specificPath = `${directoryName}/${componentType}{{properCase name}}/`;
+
+      console.log(data.options);
 
       const actionsList = [
         {
@@ -74,20 +145,30 @@ module.exports = (plop) => {
           path: `${basePath}/${specificPath}models.d.ts`,
           templateFile: "plop/component/models.hbs",
         },
-        {
-          type: "add",
-          path: `${basePath}/__tests__/${specificPath}{{properCase name}}.test.tsx`,
-          templateFile: "plop/component/test.hbs",
-        },
       ];
 
-      if (data.isStories === "yes") {
+      if (
+        data.optionalFiles &&
+        data.optionalFiles.includes(CONSTANTS.FILES.STORIES)
+      ) {
         actionsList.push({
           type: "add",
           path: `${basePath}/stories/${specificPath}{{properCase name}}.stories.tsx`,
           templateFile: "plop/component/stories.hbs",
         });
       }
+
+      if (
+        data.optionalFiles &&
+        data.optionalFiles.includes(CONSTANTS.FILES.TESTS)
+      ) {
+        actionsList.push({
+          type: "add",
+          path: `${basePath}/__tests__/${specificPath}{{properCase name}}.test.tsx`,
+          templateFile: "plop/component/test.hbs",
+        });
+      }
+
       return actionsList;
     },
   }),
@@ -97,5 +178,13 @@ module.exports = (plop) => {
       } else {
         return options.inverse(this);
       }
-    });
+    }),
+    plop.setHelper(
+      "insertOption",
+      function (componentOptions, expectedOption, options) {
+        if (componentOptions.includes(expectedOption)) {
+          return options.fn(this);
+        }
+      }
+    );
 };
