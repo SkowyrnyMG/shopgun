@@ -26,3 +26,6 @@ jest.conifg.js
 .gitignore
 
 **/*.hbs
+
+# test files
+coverage/*
