@@ -108,5 +108,6 @@ module.exports = {
 				endOfLine: 'auto',
 			},
 		],
+		'object-curly-newline': 0,
 	},
 };
