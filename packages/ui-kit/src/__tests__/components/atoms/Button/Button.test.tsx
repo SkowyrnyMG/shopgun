@@ -29,7 +29,6 @@ describe('Button - should pass all test cases', () => {
 		const buttonNode = screen.getByTestId('test-button');
 
 		userEvent.click(buttonNode);
-
 		expect(ButtonMock.onClick).toBeCalled();
 	});
 });
