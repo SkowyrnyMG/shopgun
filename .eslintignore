@@ -10,6 +10,7 @@ public
 .eslintrc.base.js
 plopfile.js
 
+storybook.base.js
 # exclude config files
 .tsconfig.json
 **/tsconfig.json
@@ -23,3 +24,8 @@ jest.conifg.js
 # exclude git
 .git
 .gitignore
+
+**/*.hbs
+
+# test files
+coverage/*

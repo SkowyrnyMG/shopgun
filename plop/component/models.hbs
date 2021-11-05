@@ -1,3 +1,11 @@
+{{#insertOption typeOptions "interface"}}
 export interface {{properCase name}}Props {
 
-}
+};
+{{/insertOption}}
+
+{{#insertOption typeOptions "namespace"}}
+{{lowerCase namespaceOption}} namespace {{properCase name}}Type {
+
+};
+{{/insertOption}}

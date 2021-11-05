@@ -1,0 +1,36 @@
+@import 'styles/main';
+
+.wrapper {
+	border: none;
+	border-radius: 5px;
+}
+
+.dark {
+	color: $c-gray-0;
+	background-color: $c-blue-1;
+}
+
+.light {
+	color: $c-white;
+	background-color: $c-blue-2;
+}
+
+.large {
+	padding: 20px 40px;
+	@include font-size(20);
+}
+
+.medium {
+	padding: 15px 30px;
+	@include font-size(20);
+}
+
+.small {
+	padding: 10px 20px;
+	@include font-size(16);
+}
+
+.extraSmall {
+	padding: 5px;
+	@include font-size(14);
+}

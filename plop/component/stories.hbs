@@ -1,8 +1,10 @@
+import React from 'react';
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import {{properCase name}} from '{{lowerCase directory}}{{#isContentType directory}}/{{camelCase componentType}}/{{else}}/{{/isContentType}}{{properCase name}}'
 
 export default {
-  title: "{{properCase name}}",
+  title: "{{properCase directory}}/{{#insertOption directory "components"}}{{properCase componentType}}/{{/insertOption}}{{properCase name}}",
   component: {{properCase name}},
   argTypes: {},
 } as ComponentMeta<typeof {{properCase name}}>;
@@ -10,3 +12,4 @@ export default {
 const Template: ComponentStory<typeof {{properCase name}}> = args => <{{properCase name}} {...args} />;
 
 export const {{properCase name}}Variant = Template.bind({});
+{{properCase name}}Variant.args = {};

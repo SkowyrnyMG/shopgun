@@ -5,13 +5,13 @@ import cn from 'classnames';
 import button from './button.module.scss';
 
 interface ButtonProperties {
-  variant?: string;
+	variant?: string;
 }
 
 export const Button: FC<ButtonProperties> = ({ children, variant = 'blue' }) => {
-  const buttonClasses = cn(button.wrapper, {
-    [button[variant]]: variant,
-  });
+	const buttonClasses = cn(button.wrapper, {
+		[button[variant]]: variant,
+	});
 
-  return <button className={buttonClasses}>{children}</button>;
+	return <button className={buttonClasses}>{children}</button>;
 };

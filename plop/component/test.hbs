@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {{properCase name}} from '{{lowerCase directory}}{{#isContentType directory}}/{{camelCase componentType}}/{{else}}/{{/isContentType}}{{properCase name}}'
-import { {{properCase name}}Props } from '{{lowerCase directory}}{{#isContentType directory}}/{{camelCase componentType}}/{{else}}/{{/isContentType}}{{properCase name}}/models.d'
-import { render, screen } from 'testUtils';
+import {{properCase name}} from '{{lowerCase directory}}{{#isContentType directory}}/{{camelCase componentType}}/{{else}}/{{/isContentType}}{{properCase name}}';
+import { {{properCase name}}Props } from '{{lowerCase directory}}{{#isContentType directory}}/{{camelCase componentType}}/{{else}}/{{/isContentType}}{{properCase name}}/models.d';
+import { render, screen{{#insertOption testFeatures "onClick"}}, userEvent{{/insertOption}} } from 'testUtils';
 
 const props: {{properCase name}}Props = {
 
@@ -10,14 +10,24 @@ const props: {{properCase name}}Props = {
 
 describe('{{properCase name}} - should pass all test cases', () => {
   test('the {{properCase name}} component renders correctly with required and optional props', () => {
-  render(<{{properCase name}} {...props} />);
+    render(<{{properCase name}} {...props} />);
 
-  const {{camelCase name}}Node = screen.getByText(/change this text or the whole query$/i);
+    const {{camelCase name}}Node = screen.getByTestId('test-{{dashCase name}}');
 
-  // the component has been rendered
-  expect({{camelCase name}}Node).toBeInTheDocument();
+    // the component has been rendered
+    expect({{camelCase name}}Node).toBeInTheDocument();
 
-  // generating a snapshot
-  expect({{camelCase name}}Node).toMatchSnapshot();
+    // generating a snapshot
+    expect({{camelCase name}}Node).toMatchSnapshot();
   });
-})
+
+  {{#insertOption testFeatures "onClick"}}
+  test('after user click on {{properCase name}} correct action should be triggered', () => {
+    render(<{{properCase name}} {...props} />);
+
+    const {{camelCase name}}Node = screen.getByTestId('test-{{dashCase name}}');
+
+    userEvent.click({{camelCase name}}Node);
+  });
+  {{/insertOption}}
+});
