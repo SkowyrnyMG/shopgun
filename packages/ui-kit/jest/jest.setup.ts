@@ -7,5 +7,5 @@ import '@testing-library/jest-dom/extend-expect';
 jest.mock('next/dist/client/router', () => require('next-router-mock'));
 
 beforeAll(() => {
-  mockRouter.setCurrentUrl('/about');
+	mockRouter.setCurrentUrl('/about');
 });
